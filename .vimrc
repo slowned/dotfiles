@@ -63,6 +63,7 @@ let NERDTreeIgnore=['\.pyc$', '\~$'] " Ignore irrelevant files like pyc and swap
 
 
 Plug 'christoomey/vim-tmux-navigator' " seamless vim/tmux navigation
+"
 " Window Navigation:
 nnoremap <C-j> <C-W><C-J>
 nnoremap <C-k> <C-W><C-K>
@@ -73,10 +74,17 @@ nnoremap <C-h> <C-W><C-H>
 set splitbelow            " hsplits below by default
 set splitright            " vsplits right by default
 " au VimResized * :wincmd = " Resize splits when the window is resized
+"
+" Faster save
+nnoremap <Leader>w :w!<CR>
+nnoremap <Leader>tn :tabnew<CR>
 
-
+" Escape with jj
+inoremap jj <ESC>
 
 " Insert mode Movements
+inoremap <C-l> <right>
+inoremap <C-h> <left>
 inoremap <C-h> <C-o>h
 inoremap <C-l> <C-o>l
 inoremap <C-j> <C-o>j
