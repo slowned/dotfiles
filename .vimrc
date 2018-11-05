@@ -30,14 +30,27 @@ Plug 'tpope/vim-repeat' " enable repeating supported plugin maps with .
 
 " Editing Plugins: ----------------------------------------
 Plug 'tpope/vim-surround'           " easy pair characters manipulation
-Plug 'jiangmiao/auto-pairs'         " easy quoting, etc. ie: insert ' -> ''; [ -> []
 Plug 'Lokaltog/vim-easymotion'      " jump, jump, jump around
+
+imap <C-t> <></><Esc>5hdiwp3lpT>i
+Plug 'mattn/emmet-vim'              " vim-emmet html complete i.e html:5_ ('_' cursosr position) Ctrl y ,
 
 " Code Formatting:---------------------------------------------------------------{{{
 Plug 'godlygeek/tabular'
 
 " Syntax Plugins:-------------------------------------------
+"Plug 'hynek/vim-python-rep8-indent'
+Plug 'cburroughs/pep8.py'
 Plug 'scrooloose/syntastic' " Syntax check
+
+" Syntax Highlight:-------------------------------------------
+Plug 'posva/vim-vue' " Vue.js Syntax Highlight
+"Plug 'evidens/vim-twig' " Twig Syntax Highlight
+Plug 'beyondwords/vim-twig'
+
+
+autocmd FileType vue syntax sync fromstart
+
 
 " Files:---------------------------------------------------------------{{{
 
@@ -62,6 +75,9 @@ let g:NERDTreeMapOpenVSplit='v'      " keep mappings between ctrlp and nerdtree 
 let NERDTreeIgnore=['\.pyc$', '\~$'] " Ignore irrelevant files like pyc and swap files
 
 
+
+
+
 Plug 'christoomey/vim-tmux-navigator' " seamless vim/tmux navigation
 "
 " Window Navigation:
@@ -83,12 +99,16 @@ nnoremap <Leader>tn :tabnew<CR>
 inoremap jj <ESC>
 
 " Insert mode Movements
+" No anda el c-h se come un careter no se xq
 inoremap <C-l> <right>
 inoremap <C-h> <left>
 inoremap <C-h> <C-o>h
 inoremap <C-l> <C-o>l
 inoremap <C-j> <C-o>j
 inoremap <C-k> <C-o>k
+
+
+
 
 " Indentation:------------------------------------{{{
 

@@ -4,6 +4,9 @@ alias sdh='sudo shutdown -h now'
 alias sdr='sudo shutdown -r now'
 alias sai='sudo apt-get install -y'
 
+alias zshconfig="vim ~/.zshrc"
+
+
 # GIT
 # TMUXXX
 
