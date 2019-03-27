@@ -1,15 +1,25 @@
 # GENERAL
-
+alias vi='nvim'
+# alias vi='strace -fo ./vim.trace vi'
 alias sdh='sudo shutdown -h now'
 alias sdr='sudo shutdown -r now'
 alias sai='sudo apt-get install -y'
+alias zshconfig='nvim ~/.zshrc'
 
-alias zshconfig="vim ~/.zshrc"
-
-
+alias mongostart='sudo service mongodb start'
+ 
 # GIT
-# TMUXXX
+alias gpt='git push origin HEAD'
 
+# TMUX
 # PYTHON
-
 alias pm='python manage.py'
+alias rmpyc='find . -name \*.pyc -delete'
+
+
+# MONI PROJECT
+alias vpn='sudo openvpn ~/.ssh/client.ovpn'
+alias api='cd ~/moni/api && source ../env_api3/bin/activate'
+alias frontend='cd ~/moni/frontend/frontend && source ~/moni/env_frontend/bin/activate'
+alias celery='DJANGO_SETTINGS_MODULE="config.settings.common" celery worker -A config -E -Q default,notification,bulk,product,scoring --loglevel=debug'
+alias celery-flower='DJANGO_SETTINGS_MODULE="config.settings.common" celery flower -A config -E -Q default,notification,bulk,product,scoring --loglevel=debug --address=127.0.0.1 --port=5672'
