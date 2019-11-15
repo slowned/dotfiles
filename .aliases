@@ -6,6 +6,8 @@ alias sdr='sudo shutdown -r now'
 alias sai='sudo apt-get install -y'
 alias zshconfig='nvim ~/.zshrc'
 
+alias opwd='xdg-open $(pwd)'
+
 alias mongostart='sudo service mongodb start'
  
 # GIT
@@ -19,7 +21,9 @@ alias rmpyc='find . -name \*.pyc -delete'
 
 # MONI PROJECT
 alias vpn='sudo openvpn ~/.ssh/client.ovpn'
-alias api='cd ~/moni/api && source ../env_api3/bin/activate'
-alias frontend='cd ~/moni/frontend/frontend && source ~/moni/env_frontend/bin/activate'
+alias api='cd ~/moni/api && source ../py37-venv/bin/activate'
+alias frontend='cd ~/moni/frontend/frontendv2 && source ~/moni/env_frontend/bin/activate'
 alias celery='DJANGO_SETTINGS_MODULE="config.settings.common" celery worker -A config -E -Q default,notification,bulk,product,scoring --loglevel=debug'
 alias celery-flower='DJANGO_SETTINGS_MODULE="config.settings.common" celery flower -A config -E -Q default,notification,bulk,product,scoring --loglevel=debug --address=127.0.0.1 --port=5672'
+alias stop_services='sudo service mysql stop && sudo service mongodb stop'
+
