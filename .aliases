@@ -27,3 +27,20 @@ alias celery='DJANGO_SETTINGS_MODULE="config.settings.common" celery worker -A c
 alias celery-flower='DJANGO_SETTINGS_MODULE="config.settings.common" celery flower -A config -E -Q default,notification,bulk,product,scoring --loglevel=debug --address=127.0.0.1 --port=5672'
 alias stop_services='sudo service mysql stop && sudo service mongodb stop'
 
+
+alias pip_setup="pip3 config set global.extra-index-url https://aws:$CODEARTIFACT_AUTH_TOKEN@hindsight-packages-412591963762.d.codeartifact.us-east-1.amazonaws.com/pypi/hindsight-pip-repository/simple/"
+
+# HINDSIGHT
+#
+alias editorial_dashboard='cd ~/Documents/hindsight/editorial_dashboard_web && npm run serve'
+
+
+
+# MONGO
+alias mservicestart="sudo systemctl start mongod.service"
+alias mstatus="sudo systemctl status mongod"
+alias mstop="sudo systemctl stop mongod"
+alias mstart="sudo systemctl start mongod"
+alias mrestart="sudo systemctl restart mongod"
+alias menable="sudo systemctl enable mongod"
+alias mdisable="sudo systemctl disable mongod"

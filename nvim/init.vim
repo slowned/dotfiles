@@ -25,6 +25,8 @@ set ignorecase     " ignore case from / search
 set nowrap         " do not cut the line with vs window
 set nowritebackup  " do not cut the line with vs window
 
+set wildignore+=*.meta
+
 " Open terminal with F10: ------------------------------
 " if has('nvim')
 "     tmap <Esc> <C-\><C-n>
@@ -61,6 +63,13 @@ Plug 'tpope/vim-fugitive' " to blame em all, Gdiff with origin
 Plug 'stephpy/vim-yaml' " yaml linter
 
 " Editing Plugins: ----------------------------------------
+" OmniShardConfigs  ---
+Plug 'omnisharp/omnisharp-vim'      " abilities for C#  OmniSharpInstall  OmniSharpStartServer
+Plug 'neoclide/coc.nvim', {'branch': 'release'}  " Conquer of Completion  :CocInstall
+Plug 'neovim/nvim-lspconfig'
+Plug 'hrsh7th/nvim-compe'
+Plug 'onsails/lspkind-nvim'
+" OmniShardConfigs  ---
 Plug 'tpope/vim-surround'           " easy pair characters manipulation
 Plug 'Lokaltog/vim-easymotion'      " jump, jump, jump around
 Plug 'ludovicchabant/vim-gutentags' " jump to function declaration
@@ -71,8 +80,10 @@ Plug 'mattn/emmet-vim'              " vim-emmet html complete i.e html:5_ ('_' c
 imap <C-t> <></><Esc>5hdiwp3lpT>i
 
 " Code Formatting:---------------------------------------------------------------{{{
-Plug 'joom/vim-commentary' " COmmentary
-Plug 'psf/black' " Python auto styling code XD supa cheater
+" Plug 'valloric/youcompleteme' " Autocompletado wacho nunca me funko
+Plug 'marijnh/tern_for_vim'  "  Tern-based JavaScript editing support @npm install -g tern
+Plug 'joom/vim-commentary' " COmmentary gc
+Plug 'psf/black' " Python auto styling code XD supa cheater NO LO USO
 Plug 'godlygeek/tabular'
 Plug 'mgedmin/python-imports.vim' "Vim script to help adding import statements in Python modules.
 
@@ -90,8 +101,7 @@ Plug 'nvie/vim-flake8'
 
 
 " Syntax Highlight:-------------------------------------------
-Plug 'tomlion/vim-solidity'  " Solidity Syntax Highlight
-Plug 'posva/vim-vue' " Vue.js Syntax Highlight
+Plug 'tomlion/vim-solidity'  " Solidity Syntax Highlight Plug 'posva/vim-vue' " Vue.js Syntax Highlight
 Plug 'beyondwords/vim-twig' " Twig Syntax Highlight
 autocmd FileType vue syntax sync fromstart
 
@@ -135,7 +145,7 @@ noremap <Leader>r :NERDTreeFind<CR>  " Find current buffer in nerdtree
 let g:NERDTreeMapOpenVSplit='v'      " keep mappings between ctrlp and nerdtree concise
 let NERDTreeIgnore=['\.pyc$', '\~$'] " Ignore irrelevant files like pyc and swap files
 
-Plug 'rking/ag.vim' " :Ag [options] {pattern} [{directory}]
+" Plug 'rking/ag.vim' " :Ag [options] {pattern} [{directory}]
 Plug 'christoomey/vim-tmux-navigator' " seamless vim/tmux navigation
 
 " Window Navigation:
